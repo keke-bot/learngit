@@ -21,7 +21,7 @@ int main() {
 
     // Ввод числа с клавиатуры
     int userInput;
-    std::cout << "Введите число: ";
+    std::cout << "Введите чwfwafwafafawfwfwafисло: ";
     std::cin >> userInput;
 
     // Поиск числа в множестве и вывод результата
