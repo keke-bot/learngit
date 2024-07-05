@@ -1,0 +1,36 @@
+#include <iostream>
+#include <set>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    std::set<int> mySet;
+    std::srand(std::time(0)); // Инициализация генератора случайных чисел
+
+    // Заполнение множества 15 случайными числами
+    for (int i = 0; i < 15; ++i) {
+        mySet.insert(std::rand() % 100); // Генерация случайного числа от 0 до 99
+    }
+
+    // Вывод содержимого множества
+    std::cout << "Содержимое множества: ";
+    for (auto it = mySet.begin(); it != mySet.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    // Ввод числа с клавиатуры
+    int userInput;
+    std::cout << "Введите число: ";
+    std::cin >> userInput;
+
+    // Поиск числа в множестве и вывод результата
+    auto result = mySet.find(userInput);
+    if (result != mySet.end()) {
+        std::cout << "Число " << userInput << " найдено в множестве на позиции " << std::distance(mySet.begin(), result) + 1 << "." << std::endl;
+    } else {
+        std::cout << "Число " << userInput << " не найдено в множестве." << std::endl;
+    }
+
+    return 0;
+}
